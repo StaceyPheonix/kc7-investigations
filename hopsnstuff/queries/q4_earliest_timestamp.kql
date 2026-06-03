@@ -1,0 +1,4 @@
+FileCreationEvents
+| where filename contains "Dev-Requirements.zip"
+| sort by timestamp asc
+| take 1

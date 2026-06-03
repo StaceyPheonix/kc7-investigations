@@ -1,0 +1,4 @@
+FileCreationEvents
+| where filename contains "Dev-Requirements.zip"
+| distinct hostname
+| count

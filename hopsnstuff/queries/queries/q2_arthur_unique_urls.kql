@@ -1,0 +1,12 @@
+Employees
+| where name == "Arthur Raymond"
+
+OutboundNetworkEvents
+| where src_ip == "<ARTHUR_IP>"
+| distinct url
+| count
+
+OutboundNetworkEvents
+| where src_ip == "190.78.143.29"
+| distinct url
+| count

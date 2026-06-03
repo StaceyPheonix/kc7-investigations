@@ -1,0 +1,4 @@
+Email
+| where recipient == "meghann_geisinsky@hopsnstuff.com"
+| where not(sender endswith "@hopsnstuff.com")
+| count

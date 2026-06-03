@@ -1,0 +1,12 @@
+Email
+| where recipient in (
+    Employees
+    | where hostname in (
+        FileCreationEvents
+        | where filename == "Dev-Requirements.zip"
+        | distinct hostname
+    )
+    | project email_addr
+)
+| where not(sender endswith "@hopsnstuff.com")
+| count

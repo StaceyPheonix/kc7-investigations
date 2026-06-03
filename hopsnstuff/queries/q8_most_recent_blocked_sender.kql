@@ -1,0 +1,13 @@
+Email
+| where recipient in (
+    Employees
+    | where hostname in (
+        FileCreationEvents
+        | where filename == "Dev-Requirements.zip"
+        | distinct hostname
+    )
+    | project email_addr
+)
+| where verdict == "BLOCKED" or verdict == "SUSPICIOUS"
+| sort by timestamp desc
+| take 1
